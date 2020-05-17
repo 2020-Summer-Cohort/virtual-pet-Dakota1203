@@ -32,11 +32,11 @@ namespace VirtualPet
             return Species;
         }
 
-        public int Hunger { get; set; }
+        public int hunger { get; set; }
         
         public void SetHunger(int hunger)
         {
-            Hunger = hunger;
+            this.hunger = hunger;
             
         }
         public int GetHunger()
@@ -67,6 +67,18 @@ namespace VirtualPet
         {
             return 30;
         }
+
+        public int Feed(int hunger)
+        {
+            
+
+
+        }
+
+        
+        
+            
+        
     }
 
 }
