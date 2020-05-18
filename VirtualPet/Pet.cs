@@ -5,8 +5,14 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class Pet
-  
+    public class Pet { }
+    
+    public pet()
+        {
+            Hunger = 50;
+            Boredom = 60;
+            Health = 30;
+        }
     {
         public string Name { get; set; }
 
@@ -32,16 +38,16 @@ namespace VirtualPet
             return Species;
         }
 
-        public int hunger { get; set; }
+        public int Hunger { get; set; }
         
         public void SetHunger(int hunger)
         {
-            this.hunger = hunger;
+            this.Hunger = hunger;
             
         }
         public int GetHunger()
         {
-            return 50;
+            return Hunger;
             
         }
         public int Boredom { get; set; }
@@ -54,7 +60,7 @@ namespace VirtualPet
 
         public int GetBoredom()
         {
-            return 60;
+            return Boredom;
         }
 
         public int Health { get; set; }
@@ -65,14 +71,12 @@ namespace VirtualPet
         }
         public int GetHealth()
         {
-            return 30;
+            return Health;
         }
 
-        public int Feed(int hunger)
+        public void Feed()
         {
-            
-
-
+            Hunger -= 40;
         }
 
         
