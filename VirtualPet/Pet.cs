@@ -5,15 +5,18 @@ using System.Text;
 
 namespace VirtualPet
 {
-    public class Pet { }
-    
-    public pet()
+    public class Pet
+    {
+
+
+        public Pet()
         {
             Hunger = 50;
             Boredom = 60;
             Health = 30;
         }
-    {
+    
+    
         public string Name { get; set; }
 
         public void SetName(string name)
@@ -50,6 +53,10 @@ namespace VirtualPet
             return Hunger;
             
         }
+        public void Feed()
+        {
+        Hunger -= 40;
+        }
         public int Boredom { get; set; }
 
         public void SetBoredom(int boredom)
@@ -61,6 +68,12 @@ namespace VirtualPet
         public int GetBoredom()
         {
             return Boredom;
+        }
+        public void Play()
+        {
+        Boredom -= 20;
+        Hunger += 10;
+        Health -= 10;
         }
 
         public int Health { get; set; }
@@ -74,12 +87,17 @@ namespace VirtualPet
             return Health;
         }
 
-        public void Feed()
+        public void SeeDoctor()
         {
-            Hunger -= 40;
+        Health -= 30;
         }
 
-        
+        public void Tick()
+        {
+        Hunger += 5;
+        Boredom += 5;
+        Health += 5;
+        }
         
             
         
