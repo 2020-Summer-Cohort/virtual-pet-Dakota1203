@@ -7,6 +7,12 @@ namespace VirtualPet
 {
     public class Pet
     {
+        public static Pet CreatePet(string name)
+            {
+                Pet p = new Pet();
+                p.Name = name;
+                return p;
+            }
 
 
         public Pet()
