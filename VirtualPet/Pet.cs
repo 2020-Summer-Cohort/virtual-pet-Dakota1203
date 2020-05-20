@@ -8,11 +8,11 @@ namespace VirtualPet
     public class Pet
     {
         public static Pet CreatePet(string name)
-            {
-                Pet p = new Pet();
-                p.Name = name;
-                return p;
-            }
+        {
+            Pet p = new Pet();
+            p.Name = name;
+            return p;
+        }
 
 
         public Pet()
@@ -77,9 +77,9 @@ namespace VirtualPet
         }
         public void Play()
         {
-        Boredom -= 20;
-        Hunger += 10;
-        Health -= 10;
+            Boredom -= 20;
+            Hunger += 10;
+            Health -= 10;
         }
 
         public int Health { get; set; }
@@ -95,14 +95,14 @@ namespace VirtualPet
 
         public void SeeDoctor()
         {
-        Health -= 30;
+            Health -= 30;
         }
 
         public void Tick()
         {
-        Hunger += 5;
-        Boredom += 5;
-        Health += 5;
+            Hunger += 5;
+            Boredom += 5;
+            Health += 5;
         }
         
             
