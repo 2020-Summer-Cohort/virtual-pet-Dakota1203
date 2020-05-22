@@ -79,7 +79,7 @@ namespace VirtualPet
         {
             Boredom -= 20;
             Hunger += 10;
-            Health -= 10;
+            Health += 10;
         }
 
         public int Health { get; set; }
@@ -95,14 +95,14 @@ namespace VirtualPet
 
         public void SeeDoctor()
         {
-            Health -= 30;
+            Health += 30;
         }
 
         public void Tick()
         {
             Hunger += 5;
             Boredom += 5;
-            Health += 5;
+            Health -= 5;
         }
         
             

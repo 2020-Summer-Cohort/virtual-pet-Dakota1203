@@ -27,7 +27,8 @@ namespace VirtualPet
                 Console.WriteLine("1. Feed your pet");
                 Console.WriteLine("2. Play with your pet");
                 Console.WriteLine("3. Take your pet to the doctor");
-                Console.WriteLine("4. Quit");
+                Console.WriteLine("4. Check pet status");
+                Console.WriteLine("5. Quit");
                 string menuChoice = Console.ReadLine();
                 switch (menuChoice)
                 {
@@ -35,21 +36,28 @@ namespace VirtualPet
                         {
                             myPet.Feed();
                             Console.WriteLine("You fed your pet!");
-                            Console.WriteLine($"your pet's Hunger level is {myPet.GetHunger()}");
                             break; }
                     case "2":
                         {
                             myPet.Play();
                             Console.WriteLine("You played with your pet!");
-                            myPet.GetBoredom();
                             break;
                         }
                     case "3":
                         {
-                            myPet.SeeDoctor(); Console.WriteLine("You took your pet to the doctor!");myPet.GetHealth();
+                            myPet.SeeDoctor();
+                            Console.WriteLine("You took your pet to the doctor!");
+                            myPet.GetHealth();
                             break;
                         }
                     case "4":
+                        {
+                            Console.WriteLine($"your pet's Hunger level is {myPet.GetHunger()}");
+                            Console.WriteLine($"your pet's Boredom level is {myPet.GetBoredom()}");
+                            Console.WriteLine($"your pet's Health level is {myPet.GetHealth()}");
+                            break;
+                        }
+                    case "5":
                         {
                             whilePlaying = false;
                             break;
