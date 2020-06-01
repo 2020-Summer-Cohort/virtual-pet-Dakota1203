@@ -8,12 +8,21 @@ namespace VirtualPet
 {
     public class Shelter
     {
-        public List<Pet> ShelterList = new List<Pet>();
-
-        public void AddPet(Pet pet)
+        public List<Pet> ShelterList = new List<Pet>()
         {
-            ShelterList.Add(pet);
+            new RoboticPet(),
+            new OrganicPet()
+        };
+
+        public void AddOrganicPet(Pet pet)
+        {
+            ShelterList.AddOrganicPet(pet);
         }
+        public void AddRoboticPet(Pet pet)
+        {
+            ShelterList.AddRoboticPet(pet);
+        }
+
         public void CheckAllPetStatus()
         {
             foreach(Pet pet in ShelterList)

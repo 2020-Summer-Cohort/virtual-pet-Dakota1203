@@ -8,16 +8,19 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Pet myPet = new Pet();
+            Pet myPet = new RoboticPet();
+            Pet myPet = new OrganicPet();
             Shelter shelter = new Shelter();
+            Pet roboticPet = new RoboticPet();
+            Pet organicPet = new OrganicPet();
 
-            Console.WriteLine("Hello! Welcome to Virtual Pets");
+            Console.WriteLine("Hello! Welcome to Virtual Pets, let's create an organic pet to start");
             Console.WriteLine("What is your pet's name?");
             myPet.SetName(Console.ReadLine());
             Console.WriteLine("What is your pet's species?");
             myPet.SetSpecies(Console.ReadLine());
             Console.WriteLine($"{myPet.GetName()} The {myPet.GetSpecies()} exists!");
-            shelter.AddPet(myPet);
+            shelter.AddOrganicPet(myPet);
             Console.WriteLine("Press Enter to start playing");
             Console.ReadLine();
 
@@ -31,8 +34,8 @@ namespace VirtualPet
                 Console.WriteLine("3. Take a pet to the vet");
                 Console.WriteLine("4. Check pet status");
                 Console.WriteLine("5. Adopt pet");
-                Console.WriteLine("6. Add pet");
-                Console.WriteLine("7. Check all pets' status");
+                Console.WriteLine("6. Add robotic pet");
+                Console.WriteLine("7. Add organic pet");
                 Console.WriteLine("8. Review Shelter list");
                 Console.WriteLine("9. Feed all pets");
                 Console.WriteLine("10. Play with all pets");
@@ -49,7 +52,8 @@ namespace VirtualPet
                             int petNumber = Convert.ToInt32(Console.ReadLine());
                             Pet petToChoose = shelter.FindPetByIndex(petNumber - 1);
                             petToChoose.Feed();
-                            Console.WriteLine($"You fed your pet! {myPet.Name}'s hunger is {myPet.Hunger}");
+                            Console.WriteLine($"You fed {petToChoose.Name}!");
+                            petToChoose.CheckPetStatus();
                             break; }
                     case "2":
                         {
@@ -57,8 +61,9 @@ namespace VirtualPet
                             Console.WriteLine("Which pet would you like to play with?");
                             int petNumber = Convert.ToInt32(Console.ReadLine());
                             Pet petToChoose = shelter.FindPetByIndex(petNumber - 1);
-                            myPet.Play();
-                            Console.WriteLine($"You played with your pet! {myPet.Name}'s boredom is {myPet.Boredom}");
+                            petToChoose.Play();
+                            Console.WriteLine($"You played with {petToChoose.Name}!");
+                            petToChoose.CheckPetStatus();
                             break;
                         }
                     case "3":
@@ -67,15 +72,18 @@ namespace VirtualPet
                             Console.WriteLine("Which pet would you like to take to the vet?");
                             int petNumber = Convert.ToInt32(Console.ReadLine());
                             Pet petToChoose = shelter.FindPetByIndex(petNumber - 1);
-                            myPet.SeeDoctor();
-                            Console.WriteLine($"You took your pet to the vet! {myPet.Name}'s Health is {myPet.Health}" +
-                                $"");
-                            myPet.GetHealth();
+                            petToChoose.SeeDoctor();
+                            Console.WriteLine($"You took {petToChoose.Name} to the vet!");
+                            petToChoose.CheckPetStatus();
                             break;
                         }
                     case "4":
                         {
-                            myPet.CheckPetStatus();
+                            shelter.PrintAllPets();
+                            Console.WriteLine("Which pet would you like to check up on?");
+                            int petNumber = Convert.ToInt32(Console.ReadLine());
+                            Pet petToChoose = shelter.FindPetByIndex(petNumber - 1);
+                            petToChoose.CheckPetStatus();
                             break;
                         }
                     case "5":
@@ -90,18 +98,24 @@ namespace VirtualPet
                         }
                     case "6":
                         {
-                            myPet = new Pet();
+                            myPet = new RoboticPet();
                             Console.WriteLine("What is your pet's name?");
                             myPet.SetName(Console.ReadLine());
                             Console.WriteLine("What is your pet's species?");
                             myPet.SetSpecies(Console.ReadLine());
-                            shelter.AddPet(myPet);
-                            Console.WriteLine($"{myPet.GetName()} The {myPet.GetSpecies()} exists!");
+                            shelter.AddRoboticPet(myPet);
+                            Console.WriteLine($"{myPet.GetName()} The Robo-{myPet.GetSpecies()} exists!");
                                 break;
                         }
                     case "7":
                         {
-                            shelter.CheckAllPetStatus();
+                            myPet = new OrganicPet();
+                            Console.WriteLine("What is your pet's name?");
+                            myPet.SetName(Console.ReadLine());
+                            Console.WriteLine("What is your pet's species?");
+                            myPet.SetSpecies(Console.ReadLine());
+                            shelter.AddOrganicPet(myPet);
+                            Console.WriteLine($"{myPet.GetName()} The {myPet.GetSpecies()} exists!");
                             break;
                         }
                     case "8":
