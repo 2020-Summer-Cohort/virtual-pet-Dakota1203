@@ -7,12 +7,12 @@ namespace VirtualPet
 {
     public abstract class Pet
     {
-        public static Pet CreatePet(string name)
-        {
-            Pet p = new Pet();
-            p.Name = name;
-            return p;
-        }
+        //public static Pet CreatePet(string name)
+        //{
+        //    Pet p = new Pet();
+        //    p.Name = name;
+        //    return p;
+        //}
     
     
         public string Name { get; set; }

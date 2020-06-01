@@ -8,26 +8,27 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Pet myPet = new RoboticPet();
-            Pet myPet = new OrganicPet();
+            //Pet myPet = new Pet();
+            //Pet myPet = new RoboticPet();
+            //Pet myPet = new OrganicPet();
             Shelter shelter = new Shelter();
             Pet roboticPet = new RoboticPet();
             Pet organicPet = new OrganicPet();
 
             Console.WriteLine("Hello! Welcome to Virtual Pets, let's create an organic pet to start");
             Console.WriteLine("What is your pet's name?");
-            myPet.SetName(Console.ReadLine());
+            organicPet.SetName(Console.ReadLine());
             Console.WriteLine("What is your pet's species?");
-            myPet.SetSpecies(Console.ReadLine());
-            Console.WriteLine($"{myPet.GetName()} The {myPet.GetSpecies()} exists!");
-            shelter.AddOrganicPet(myPet);
+            organicPet.SetSpecies(Console.ReadLine());
+            Console.WriteLine($"{organicPet.GetName()} The {organicPet.GetSpecies()} exists!");
+            shelter.AddOrganicPet(organicPet);
             Console.WriteLine("Press Enter to start playing");
             Console.ReadLine();
 
             bool whilePlaying = true;
             do
             {
-                myPet.Tick();
+                shelter.TickAllPets();
                 Console.WriteLine("What do you want to do with your pet?");
                 Console.WriteLine("1. Feed a pet");
                 Console.WriteLine("2. Play with a pet");
@@ -98,24 +99,24 @@ namespace VirtualPet
                         }
                     case "6":
                         {
-                            myPet = new RoboticPet();
+                            roboticPet = new RoboticPet();
                             Console.WriteLine("What is your pet's name?");
-                            myPet.SetName(Console.ReadLine());
+                            roboticPet.SetName(Console.ReadLine());
                             Console.WriteLine("What is your pet's species?");
-                            myPet.SetSpecies(Console.ReadLine());
-                            shelter.AddRoboticPet(myPet);
-                            Console.WriteLine($"{myPet.GetName()} The Robo-{myPet.GetSpecies()} exists!");
+                            roboticPet.SetSpecies(Console.ReadLine());
+                            shelter.AddRoboticPet(roboticPet);
+                            Console.WriteLine($"{roboticPet.GetName()} The Robo-{roboticPet.GetSpecies()} exists!");
                                 break;
                         }
                     case "7":
                         {
-                            myPet = new OrganicPet();
+                            organicPet = new OrganicPet();
                             Console.WriteLine("What is your pet's name?");
-                            myPet.SetName(Console.ReadLine());
+                            organicPet.SetName(Console.ReadLine());
                             Console.WriteLine("What is your pet's species?");
-                            myPet.SetSpecies(Console.ReadLine());
-                            shelter.AddOrganicPet(myPet);
-                            Console.WriteLine($"{myPet.GetName()} The {myPet.GetSpecies()} exists!");
+                            organicPet.SetSpecies(Console.ReadLine());
+                            shelter.AddOrganicPet(organicPet);
+                            Console.WriteLine($"{organicPet.GetName()} The {organicPet.GetSpecies()} exists!");
                             break;
                         }
                     case "8":

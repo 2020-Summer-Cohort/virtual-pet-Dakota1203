@@ -16,11 +16,11 @@ namespace VirtualPet
 
         public void AddOrganicPet(Pet pet)
         {
-            ShelterList.AddOrganicPet(pet);
+            ShelterList.Add(pet);
         }
         public void AddRoboticPet(Pet pet)
         {
-            ShelterList.AddRoboticPet(pet);
+            ShelterList.Add(pet);
         }
 
         public void CheckAllPetStatus()
@@ -59,9 +59,9 @@ namespace VirtualPet
             {
                 Console.WriteLine($"Name: {pet.Name}");
                 Console.WriteLine($"Species: {pet.Species}");
-                Console.WriteLine($"{pet.Name}'s Hunger level is {pet.Hunger}");
-                Console.WriteLine($"{pet.Name}'s Boredom level is {pet.Boredom}");
-                Console.WriteLine($"{pet.Name}'s Health level is {pet.Health}");
+                //Console.WriteLine($"{pet.Name}'s Hunger level is {pet.Hunger}");
+                //Console.WriteLine($"{pet.Name}'s Boredom level is {pet.Boredom}");
+                //Console.WriteLine($"{pet.Name}'s Health level is {pet.Health}");
             }
         }
         public void PrintAllPets()
@@ -84,6 +84,13 @@ namespace VirtualPet
         public void RemovePetFromList(Pet pet)
         {
             ShelterList.Remove(pet);
+        }
+        public void TickAllPets()
+        {
+            foreach (Pet pet in ShelterList)
+            {
+                pet.Tick();
+            }
         }
     }
 }
