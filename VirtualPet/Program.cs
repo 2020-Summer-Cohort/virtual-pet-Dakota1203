@@ -8,9 +8,6 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            //Pet myPet = new Pet();
-            //Pet myPet = new RoboticPet();
-            //Pet myPet = new OrganicPet();
             Shelter shelter = new Shelter();
             Pet roboticPet = new RoboticPet();
             Pet organicPet = new OrganicPet();
@@ -132,6 +129,7 @@ namespace VirtualPet
                     case "10":
                         {
                             shelter.PlayWithAllPets();
+                            
                             break;
                         }
                     case "11":

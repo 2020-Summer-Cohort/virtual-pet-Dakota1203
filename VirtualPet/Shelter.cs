@@ -10,8 +10,8 @@ namespace VirtualPet
     {
         public List<Pet> ShelterList = new List<Pet>()
         {
-            new RoboticPet(),
-            new OrganicPet()
+            //new RoboticPet(),
+            //new OrganicPet()
         };
 
         public void AddOrganicPet(Pet pet)
@@ -28,28 +28,39 @@ namespace VirtualPet
             foreach(Pet pet in ShelterList)
             {
                 pet.CheckPetStatus();
+                Console.WriteLine(" ");
             }
 
         }
         public void FeedAllPets()
         {
+            Console.WriteLine("You fed all the pets in the shelter!");
             foreach (Pet pet in ShelterList)
             {
                 pet.Feed();
+                pet.CheckPetStatus();
+                Console.WriteLine(" ");
             }
         }
         public void PlayWithAllPets()
         {
+            Console.WriteLine("You played with all the pets in the shelter!");
             foreach (Pet pet in ShelterList)
             {
                 pet.Play();
+                pet.CheckPetStatus();
+                Console.WriteLine(" ");
             }
         }
         public void AllPetsSeeDoctor()
         {
+            Console.WriteLine("You took all the pets in the shelter to the vet!");
             foreach(Pet pet in ShelterList)
             {
                 pet.SeeDoctor();
+                pet.CheckPetStatus();
+                Console.WriteLine(" ");
+
             }
         }
         public void PrintAllPetDetails()
@@ -59,9 +70,8 @@ namespace VirtualPet
             {
                 Console.WriteLine($"Name: {pet.Name}");
                 Console.WriteLine($"Species: {pet.Species}");
-                //Console.WriteLine($"{pet.Name}'s Hunger level is {pet.Hunger}");
-                //Console.WriteLine($"{pet.Name}'s Boredom level is {pet.Boredom}");
-                //Console.WriteLine($"{pet.Name}'s Health level is {pet.Health}");
+                pet.CheckPetStatus();
+                Console.WriteLine(" ");
             }
         }
         public void PrintAllPets()
