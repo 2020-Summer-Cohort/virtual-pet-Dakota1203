@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VirtualPet
 {
-    class RoboticPet : Pet
+    public class RoboticPet : Pet
     {
     public RoboticPet()
         {
@@ -16,6 +16,34 @@ namespace VirtualPet
         public int Rust { get; set; }
         public int Battery { get; set; }
         public int Performance { get; set; }
+        public void SetBattery(int battery)
+        {
+            this.Battery = battery;
+
+        }
+        public int GetBattery()
+        {
+            return Battery;
+
+        }
+        public void SetRust(int rust)
+        {
+            Rust = rust;
+
+        }
+
+        public int GetRust()
+        {
+            return Rust;
+        }
+        public void SetPerformance(int performance)
+        {
+            Performance = performance;
+        }
+        public int GetPerformance()
+        {
+            return Performance;
+        }
 
         public override void Feed()
         {
